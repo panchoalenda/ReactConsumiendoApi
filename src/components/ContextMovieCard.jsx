@@ -1,20 +1,20 @@
   import { useEffect, useState } from "react";
   import { Get } from "../data/HttpClient";
   import { MovieCard } from "./MovieCard";
+  import "./contextMovieCard.css"
 
   export const ContextMovieCard = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-      Get("/episode").then((data) => {
+      Get("/character").then((data) => {
         setMovies(data.results);
         
       });
     }, []);
-    console.log(movies);
     return (
       <>
-        <ul>
+        <ul className="container">
           {movies.map((movie, index) => (
              <MovieCard movie={movie} key={index} />
           ))}
