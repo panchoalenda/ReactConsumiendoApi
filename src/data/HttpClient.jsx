@@ -1,3 +1,17 @@
+//import axios from "axios";
+
+//  const API = "https://rickandmortyapi.com/api";
+// export const Get = async (path) => {
+//   try {
+//     const result = await axios.get(API + path);
+//     return result;
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   return null;
+// };
+
+/*SIN USAR AXIOS */
 const API = "https://rickandmortyapi.com/api";
 export const Get = async (path) => {
   const result = await fetch(API + path, {
@@ -6,5 +20,5 @@ export const Get = async (path) => {
       "Content-Type": "application/json; charset=utf-8",
     },
   });
-  return await result.json(); 
+  return await result.json();
 };
